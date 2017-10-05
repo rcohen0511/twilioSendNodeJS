@@ -47,7 +47,7 @@ function formSubmission(req, res) {
 		);		
         client.messages.create({
             from: "+19176151444",
-            to: "+19174160409",
+            to: "+1"+values[0],
             body: "Hello from Robert Cohen CS 643 Fall 2017"
         }, function (err, message) {
             if (err) console.error(err.message);
