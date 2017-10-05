@@ -27,12 +27,21 @@ function displayForm(res) {
 
 
 function formSubmission(req, res) {
+	var fields = [];
+	var values = [];
+	var form = new formidable.IncomingForm();
+	form.on('field', function (field, value) {
+		fields[field] = value;
+		values.push(value);
+	});
 
 	form.on('end', function () {
 		res.writeHead(200, {
 			'content-type': 'text/plain'
 		});
-		res.end();
+		res.end(util.inspect({
+			fields: fields
+		}));
 		client = require('twilio')(
 			"ACa87e8aa01e3aca3e1c104b065a03e951", "530048a4490e8de5edb43db6d8d47d22"
 		);		

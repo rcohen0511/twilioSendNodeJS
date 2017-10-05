@@ -3,9 +3,12 @@
 <body>
 	<h2> Press the button bellow to submit Twilio individual assignment </h2>
     <br><br>
-    <h3> Pressing the button bellow will send a text message to 1 917 349 0168. </h3>
+    <h3> Pressing the button bellow will send a text message to the specified number, input any number for testing
+    and input 1 917 349 0168 for assigment submission. </h3>
 	<form action="" method="post" enctype="multipart/form-data">
 		<fieldset>
+			<label for="recipient_num">Recipient's 9-digit Number:</label>
+			<input type="text" id="recipient_num" name="recipient_num" placeholder="No dashes: ##########" />
 			<br />
 			<input type="submit" value="SEND SMS Message" />
 		</fieldset>
